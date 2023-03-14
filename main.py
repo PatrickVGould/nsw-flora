@@ -2,12 +2,10 @@
 import streamlit as st
 from streamlit_chat import message
 
-from langchain.chains import ConversationChain
-from langchain.llms import OpenAI, VectorDBQA
+from langchain.llms import OpenAI
+from langchain.chains import VectorDBQA
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.chains.qa_with_sources import load_qa_with_sources_chain
-from langchain.chains import VectorDBQAWithSourcesChain
 from langchain.vectorstores import Pinecone
 import pinecone
 
