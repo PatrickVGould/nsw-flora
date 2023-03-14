@@ -35,7 +35,7 @@ def qa_source_vector(model = 'OpenAI', index_name='nsw-plants'):
     return new_chain
 
 def get_text():
-    input_text = st.text_input("You: ", "Input your text description of a NSW Flora Species?", key="input")
+    input_text = st.text_input("You: ", "Input a question about NSW Flora:", key="input")
     return input_text
 
 user_input = get_text()
