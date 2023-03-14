@@ -38,9 +38,8 @@ def get_text():
     input_text = st.text_input("You: ", "Input your text description of a NSW Flora Species?", key="input")
     return input_text
 
-new_chain = qa_source_vector()
-
 user_input = get_text()
+new_chain = qa_source_vector()
 
 if user_input:
     output = new_chain.run(input=user_input)
