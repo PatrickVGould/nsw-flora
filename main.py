@@ -51,10 +51,7 @@ if user_input:
     except:
         st.session_state.past.append(user_input)
         st.session_state.generated.append("Question returned with error. Try changing the question or make it more specific.")
-    
-    
-    #Clear the field after submission
-    st.session_state.input = ""
+
 if st.session_state["generated"]:
 
     for i in range(len(st.session_state["generated"]) - 1, -1, -1):
