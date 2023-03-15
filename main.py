@@ -43,10 +43,13 @@ def get_text():
 user_input = get_text()
 
 if user_input:
-    output = new_chain.run(user_input)
-
-    st.session_state.past.append(user_input)
-    st.session_state.generated.append(output)
+    try:
+        output = new_chain.run(user_input)
+        st.session_state.past.append(user_input)
+        st.session_state.generated.append(output)
+    except:
+        st.session_state.past.append(user_input)
+        st.session_state.generated.append("Question returned with error. Try changing the question or make it more specific.")
 
 if st.session_state["generated"]:
 
