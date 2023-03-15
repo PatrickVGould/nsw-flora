@@ -15,12 +15,8 @@ openai_api_key = st.secrets["OPENAI_API_KEY"]
 pinecone_api_key = st.secrets["PINECONE_API_KEY"]
 
 def qa_source_vector(model = 'OpenAI', index_name='nsw-plants'):
-    if model == 'ChatOpenAI':
-        llm = ChatOpenAI(temperature=0, openai_api_key=openai_api_key)
-    else:
-        llm = OpenAI(temperature=0.5, openai_api_key=openai_api_key)
-
-    pinecone.init(api_key=pinecone_api_key,environment='us-east-1-aws')
+    llm = OpenAI(temperature=0.5, openai_api_key=openai_api_key)
+    #pinecone.init(api_key=pinecone_api_key,environment='us-east-1-aws')
     embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
     docsearch = Pinecone.from_existing_index(index_name, embeddings)
     new_chain = VectorDBQA.from_chain_type(llm=llm, chain_type='map_reduce', vectorstore=docsearch)
