@@ -9,18 +9,10 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Pinecone
 import pinecone
 
-st.set_page_config(page_title="NSW Flora Finder 🌿🍃🌱", page_icon="favicon.ico")
-st.header("NSW Flora Finder 🌿🍃🌱")
 
-if "generated" not in st.session_state:
-    st.session_state["generated"] = []
-
-if "past" not in st.session_state:
-    st.session_state["past"] = []
 
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 pinecone_api_key = st.secrets["PINECONE_API_KEY"]
-
 
 def qa_source_vector(model = 'OpenAI', index_name='nsw-plants'):
     if model == 'ChatOpenAI':
@@ -34,12 +26,25 @@ def qa_source_vector(model = 'OpenAI', index_name='nsw-plants'):
     new_chain = VectorDBQA.from_chain_type(llm=llm, chain_type='map_reduce', vectorstore=docsearch)
     return new_chain
 
+new_chain = qa_source_vector()
+
+#From here all down is streamlit
+
+st.set_page_config(page_title="NSW Flora Finder 🌿🍃🌱", page_icon="favicon.ico")
+st.header("NSW Flora Finder 🌿🍃🌱")
+
+if "generated" not in st.session_state:
+    st.session_state["generated"] = []
+
+if "past" not in st.session_state:
+    st.session_state["past"] = []
+
+
 def get_text():
     input_text = st.text_input("You: ", "Input a question about NSW Flora: 🍃", key="input")
     return input_text
 
 user_input = get_text()
-new_chain = qa_source_vector()
 
 if user_input:
     query = user_input
