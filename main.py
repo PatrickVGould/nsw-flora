@@ -16,7 +16,7 @@ pinecone_api_key = st.secrets["PINECONE_API_KEY"]
 index_name = st.secrets["PINECONE_INDEX_NAME"]
 
 def qa_source_vector():
-    llm = ChatOpenAI(temperature=0.5, openai_api_key=openai_api_key)
+    llm = OpenAI(temperature=0.5, openai_api_key=openai_api_key)
     embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
     docsearch = Pinecone.from_existing_index(index_name, embeddings)
     new_chain = VectorDBQA.from_chain_type(llm=llm, chain_type='map_reduce', vectorstore=docsearch)
