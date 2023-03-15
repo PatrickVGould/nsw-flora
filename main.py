@@ -55,4 +55,5 @@ if st.session_state["generated"]:
                 avatar_style = "bottts-neutral",
                 seed='qweqdsa'
                 )
-        message(st.session_state["past"][i], is_user=True, key=str(i) + "_user")
+        message(st.session_state["past"][i], is_user=True, avatar_style = 'fun-emoji', seed = 'asdascd', key=str(i) + "_user")
+
