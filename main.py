@@ -29,11 +29,11 @@ new_chain = qa_source_vector()
 st.set_page_config(page_title="NSW Flora Finder 🌿🍃🌱", page_icon="favicon.ico")
 st.header("NSW Flora Finder 🌿🍃🌱")
 with st.sidebar:
-    st.caption("""Welcome to the NSW Flora Finder! 🌿🍃🌱 
-    This tool helps you find information about the flora in New South Wales. 
-    To get started, simply type your question about NSW flora in the input field and press Enter. Keep in mind that you are interacting with an AI language model, which can provide accurate and relevant information most of the time but may occasionally produce unexpected or incorrect responses due to the complexities of natural language understanding. If you don't receive a satisfactory answer, try rephrasing your question or making it more specific. 
-    The AI model is trained on most of the volumes of 'The Flora of Australia' series which includes all flowering and non-flowering plants known to be indigenous or naturalised in Australia. It has also been trained on the wikipedia pages for the categora 'Flora of NSW'. It can answer questions about the flora in NSW and Australia, but it may not be able to answer questions about other topics. 
-    Note that it has not been trained on the following Flora of Australia volumes as they are not available online: Volume 8 - Lecythidales to Batales, Volume 39 - Alismatales to Arale, Volume 43 - Poaceae 1, Volume 44A - Poaceae 2, Volume 44B - Poaceae 3, Volume 54 - Lichens - Introduction, Lecanorales 1, Volume 55 - Lichens - Lecanorales 2, Parmeliaceae, Volume 56A - Lichens 4, Volume 57 - Lichens 5, and Volume 58A - Lichens 3. As such, answers on topics that would be contained in these volumes will be limited or non-existant. 
+    st.caption("""Welcome to the NSW Flora Finder! 🌿🍃🌱  \n
+    This tool helps you find information about the flora in New South Wales.   \n
+    To get started, simply type your question about NSW flora in the input field and press Enter. Keep in mind that you are interacting with an AI language model, which can provide accurate and relevant information most of the time but may occasionally produce unexpected or incorrect responses due to the complexities of natural language understanding. If you don't receive a satisfactory answer, try rephrasing your question or making it more specific.  \n
+    The AI model is trained on most of the volumes of 'The Flora of Australia' series which includes all flowering and non-flowering plants known to be indigenous or naturalised in Australia. It has also been trained on the wikipedia pages for the categora 'Flora of NSW'. It can answer questions about the flora in NSW and Australia, but it may not be able to answer questions about other topics.  \n
+    Note that it has not been trained on the following Flora of Australia volumes as they are not available online: Volume 8 - Lecythidales to Batales, Volume 39 - Alismatales to Arale, Volume 43 - Poaceae 1, Volume 44A - Poaceae 2, Volume 44B - Poaceae 3, Volume 54 - Lichens - Introduction, Lecanorales 1, Volume 55 - Lichens - Lecanorales 2, Parmeliaceae, Volume 56A - Lichens 4, Volume 57 - Lichens 5, and Volume 58A - Lichens 3. As such, answers on topics that would be contained in these volumes will be limited or non-existant.   \n
     If you have any questions or feedback, please contact me at patrickvgould97@gmail.com""")
 
 
