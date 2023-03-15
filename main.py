@@ -56,7 +56,6 @@ if user_input:
     
     #Clear the field after submission
     input_container.empty()
-    user_input = get_text()
 
 if st.session_state["generated"]:
 
