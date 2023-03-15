@@ -40,7 +40,6 @@ def get_text():
     input_text = st.text_input("You: ", "", key="input", placeholder="Input a question about NSW Flora: 🍃")
     return input_text
 
-input_container = st.empty()
 user_input = get_text()
 
 if user_input:
@@ -55,8 +54,7 @@ if user_input:
     
     
     #Clear the field after submission
-    input_container.empty()
-
+    st.session_state.input = ""
 if st.session_state["generated"]:
 
     for i in range(len(st.session_state["generated"]) - 1, -1, -1):
