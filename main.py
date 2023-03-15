@@ -44,7 +44,6 @@ new_chain = qa_source_vector()
 if user_input:
     query = user_input
     output = new_chain.run(query)
-    query = ""
 
     st.session_state.past.append(user_input)
     st.session_state.generated.append(output)
