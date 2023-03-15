@@ -10,7 +10,7 @@ from langchain.vectorstores import Pinecone
 import pinecone
 
 st.set_page_config(page_title="NSW Flora Finder 🌿🍃🌱", page_icon="favicon.ico")
-st.header("NSW Flora Finder")
+st.header("NSW Flora Finder 🌿🍃🌱")
 
 if "generated" not in st.session_state:
     st.session_state["generated"] = []
