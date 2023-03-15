@@ -13,10 +13,10 @@ import pinecone
 
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 pinecone_api_key = st.secrets["PINECONE_API_KEY"]
+index_name = st.secrets["PINECONE_INDEX_NAME"]
 
-def qa_source_vector(model = 'OpenAI', index_name='nsw-plants'):
+def qa_source_vector():
     llm = OpenAI(temperature=0.5, openai_api_key=openai_api_key)
-    #pinecone.init(api_key=pinecone_api_key,environment='us-east-1-aws')
     embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
     docsearch = Pinecone.from_existing_index(index_name, embeddings)
     new_chain = VectorDBQA.from_chain_type(llm=llm, chain_type='map_reduce', vectorstore=docsearch)
