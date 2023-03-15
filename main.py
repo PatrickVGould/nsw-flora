@@ -54,6 +54,6 @@ if st.session_state["generated"]:
     for i in range(len(st.session_state["generated"]) - 1, -1, -1):
         message(st.session_state["generated"][i], key=str(i),
                 avatar_style = "bottts-neutral",
-                seed=1234345
+                seed=765
                 )
         message(st.session_state["past"][i], is_user=True, key=str(i) + "_user")
