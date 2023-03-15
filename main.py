@@ -40,6 +40,7 @@ def get_text():
     input_text = st.text_input("You: ", "", key="input", placeholder="Input a question about NSW Flora: 🍃")
     return input_text
 
+input_container = st.empty()
 user_input = get_text()
 
 if user_input:
@@ -47,9 +48,15 @@ if user_input:
         output = new_chain.run(user_input)
         st.session_state.past.append(user_input)
         st.session_state.generated.append(output)
+
     except:
         st.session_state.past.append(user_input)
         st.session_state.generated.append("Question returned with error. Try changing the question or make it more specific.")
+    
+    
+    #Clear the field after submission
+    input_container.empty()
+    user_input = get_text(input_container)
 
 if st.session_state["generated"]:
 
