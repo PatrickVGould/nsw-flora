@@ -28,7 +28,8 @@ new_chain = qa_source_vector()
 
 st.set_page_config(page_title="NSW Flora Finder 🌿🍃🌱", page_icon="favicon.ico")
 st.header("NSW Flora Finder 🌿🍃🌱")
-st.caption("Welcome to the NSW Flora Finder! 🌿🍃🌱 This tool helps you find information about the flora in New South Wales. To get started, simply type your question about NSW flora in the input field and press Enter. Keep in mind that you are interacting with an AI language model, which can provide accurate and relevant information most of the time but may occasionally produce unexpected or incorrect responses due to the complexities of natural language understanding. If you don't receive a satisfactory answer, try rephrasing your question or making it more specific.")
+with st.sidebar:
+    st.caption("Welcome to the NSW Flora Finder! 🌿🍃🌱 This tool helps you find information about the flora in New South Wales. To get started, simply type your question about NSW flora in the input field and press Enter. Keep in mind that you are interacting with an AI language model, which can provide accurate and relevant information most of the time but may occasionally produce unexpected or incorrect responses due to the complexities of natural language understanding. If you don't receive a satisfactory answer, try rephrasing your question or making it more specific.")
 
 
 if "generated" not in st.session_state:
