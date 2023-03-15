@@ -39,10 +39,10 @@ def get_text():
     return input_text
 
 user_input = get_text()
-new_chain = qa_source_vector()
 
 if user_input:
     query = user_input
+    new_chain = qa_source_vector()
     output = new_chain.run(query)
 
     st.session_state.past.append(user_input)
