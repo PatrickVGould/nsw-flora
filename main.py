@@ -50,7 +50,7 @@ if user_input:
 
     except:
         st.session_state.past.append(user_input)
-        st.session_state.generated.append("Question returned with error. Try changing the question or make it more specific.")
+        st.session_state.generated.append("Question returned with error (It was likely too complex and required me to read too much information). Try changing the question or make it more specific.")
 
 if st.session_state["generated"]:
 
