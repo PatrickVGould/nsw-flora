@@ -9,7 +9,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Pinecone
 import pinecone
 
-st.set_page_config(page_title="NSW Flora Finder", page_icon="favicon.ico")
+st.set_page_config(page_title="NSW Flora Finder 🌿🍃🌱", page_icon="favicon.ico")
 st.header("NSW Flora Finder")
 
 if "generated" not in st.session_state:
@@ -35,7 +35,7 @@ def qa_source_vector(model = 'OpenAI', index_name='nsw-plants'):
     return new_chain
 
 def get_text():
-    input_text = st.text_input("You: ", "Input a question about NSW Flora:", key="input")
+    input_text = st.text_input("You: ", "Input a question about NSW Flora: 🍃", key="input")
     return input_text
 
 user_input = get_text()
