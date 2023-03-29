@@ -85,8 +85,6 @@ def run_agent(user_input):
     response = agent_chain.run(input=user_input)
     return response
 
-new_chain = qa_source_vector()
-
 #From here all down is streamlit
 
 st.set_page_config(page_title="FloraAustralisChat 🔍", page_icon="favicon.ico")
