@@ -4,3 +4,4 @@ streamlit
 streamlit-chat
 pinecone-client
 tiktoken
+pyalex
